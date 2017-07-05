@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @post.author %>
+</p>
+
+<p>
+  <strong>Blog entry:</strong>
+  <%= @post.blog_entry %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> 
+
+<div id="comments">
+
+    <h4>Comments</h4>
+
+    <%= render 'comments/form', comment: @comment %>
+
+    <% @post.comments.each do |comment| %>
+        <p>
+	    	<br /><%= comment.author %> said...<br />
+	    	<%= comment.comment_entry %>
+		</p>
+
+		<%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <% end %>
+
+</div>
+
+<%= link_to 'Back', posts_path %>
