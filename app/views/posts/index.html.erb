@@ -1,31 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
 
-<h1>Posts</h1>
+<div class="row first-row">
+  <div class="col-md-2">
+    <p>Title</p>
+  </div>
+  <div class="col-md-2">
+    <p>Author</p>
+  </div>
+  <div class="col-md-6">
+    <p>Blog Entry</p>
+  </div>
+  <div class="col-md-2">
+    <p>Action</p>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Blog entry</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.author %></td>
-        <td><%= post.blog_entry %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<% @posts.each do |post| %>
+  <div class="row table-content">
+  <div class="col-md-2">
+    <%= post.title %>
+  </div>
+  <div class="col-md-2">
+    <%= post.author %>
+  </div>
+  <div class="col-md-6">
+    <%= post.blog_entry %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to 'Show', post %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>   
+  </div> 
+<% end %>
+</div>

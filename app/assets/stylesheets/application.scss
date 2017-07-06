@@ -16,3 +16,32 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+body {
+	text-align: center;
+}
+
+.main {
+	margin-bottom: 0px;
+}
+
+.footer {
+	background-color: #000;
+	margin-top: 0px;
+	padding-top: 15px;
+	color: #fff;
+	height: 50px;
+}
+
+.jumbotron {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+a.link {
+	text-decoration: none;
+}
+
+a.visited {
+	text-decoration: none;
+}

@@ -1,3 +1,44 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.first-row {
+	background-color: #000;
+	color: #fff;
+	padding-top: 15px;
+	margin-bottom: 5px;
+}
+
+.table-content {
+	border-bottom-style: solid;
+	border-bottom-size: 0.5px;
+	border-bottom-color: #fff;
+}
+
+.panel {
+	margin-top: 50px;
+}
+
+.blog {
+	text-align: left;
+}
+
+#comment-history{
+	text-align: left;
+}
+
+#comments {
+	border-top-style: double;
+	border-top-width: 3px;
+	border-top-color: #000;
+	text-align: left;
+	margin-top: 20px;
+}
+
+#each-comment {
+	padding: 10px;
+	border-style: dashed;
+	border-width: 0.3px;
+	border-color: #000;
+}

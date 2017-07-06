@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :author %>
-    <%= form.text_field :author, id: :comment_author %>
+    <%= form.text_field :author, id: :comment_author, placeholder: "Written By..." %>
   </div>
 
   <div class="field">
-    <%= form.label :comment_entry %>
-    <%= form.text_area :comment_entry, id: :comment_comment_entry %>
+    <%= form.label :comment_entry %><br>
+    <%= form.text_area :comment_entry, id: :comment_comment_entry,  placeholder: "Tell Me Something..." %>
   </div>
 
   <div class="field">
