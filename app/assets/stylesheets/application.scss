@@ -21,6 +21,17 @@ body {
 	text-align: center;
 }
 
+#home {
+	background-color: pink;
+}
+
+.top {
+	margin: -5px 10px;
+	font-size: 14px;
+	background-color: #fff;
+	width: 100px;
+}
+
 .main {
 	margin-bottom: 0px;
 }
@@ -38,10 +49,14 @@ body {
 	padding-bottom: 0px;
 }
 
-a.link {
+a:link {
 	text-decoration: none;
 }
 
-a.visited {
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
 	text-decoration: none;
 }

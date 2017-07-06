@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :post_title, class: "form-title" %>
   </div>
 
   <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :post_author %>
+    <%= form.label :author %><br>
+    <%= form.text_field :author, id: :post_author, class: "form-author" %>
   </div>
 
   <div class="field">
     <%= form.label :blog_entry %><br>
-    <%= form.text_area :blog_entry, id: :post_blog_entry %>
+    <%= form.text_area :blog_entry, id: :post_blog_entry, class: "form-entry" %>
   </div>
 
   <div class="actions">
