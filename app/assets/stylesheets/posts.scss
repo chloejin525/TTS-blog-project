@@ -2,12 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#action {
+	list-style: none;
+	margin-top: 10px;
+}
+
+li {
+	margin: 5px;
+	margin-left: -25px;
+}
 
 .first-row {
 	background-color: #000;
 	color: #fff;
-	padding-top: 15px;
+	padding-top: 25px;
 	margin-bottom: 5px;
+	height: 60px;
 }
 
 .table-content {
