@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :author %>
-    <%= form.text_field :author, id: :comment_author, placeholder: "Written By..." %>
+    <%= form.text_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">

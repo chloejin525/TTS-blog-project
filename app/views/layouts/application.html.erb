@@ -21,7 +21,8 @@
           </ul>
           <div class="pull-right">
               <% if current_user %>
-                <%= current_user.email %>
+                <span style="font-weight: bold">Hi, <%= current_user.username %>! :)</span>
+                <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %> 
                 <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-default" %>
               <% end %>
           </div>
