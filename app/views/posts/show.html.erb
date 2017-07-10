@@ -9,8 +9,10 @@
   <div class="panel-body">
     <p>
       <strong>Author:</strong>
-      <%= image_tag @post.user.avatar.url, id: "post_pic" %>
-      <%= link_to @post.user.username, user_posts_path(name: @post.user.username) %>
+      <%= link_to user_posts_path(name: @post.user.username) do %>
+        <%= image_tag @post.user.avatar.url, id: "post_pic" %>
+        <%= @post.user.username %>
+      <% end %>
     </p>
     <p>
       <strong>Last updated:</strong>
@@ -25,9 +27,17 @@
       <% if @post.user == current_user %>
       <%= link_to 'Edit', edit_post_path(@post) %>
       <% end %>
-
     </div>
-
+  </div>
+  <div class="panel-footer panel-post">
+    <em><strong>Tags</strong></em>:
+    <% @post.tags.each do |tag| %>
+      |<%= link_to tag.name, tag %>|
+    <% end %>
+    <br>
+    <h5>Add Tags:</h5>
+    <%= render 'tags/form', tag: @tag %>
+    <% Tagname.create(tag_id: @tag.id, post_id: @post.id) %>
   </div>
 </div>
 
@@ -37,8 +47,11 @@
       <p id="each-comment">
         At <%= comment.updated_at %>: 
         <br> 
-        <%= image_tag comment.user.avatar.url, id: "post_pic" %>
-        <strong><%= link_to comment.user.username, user_posts_path(name: comment.user.username) %> said...</strong><br />
+        <%= link_to user_posts_path(name: comment.user.username) do %>
+          <%= image_tag comment.user.avatar.url, id: "post_pic" %>
+          <strong><%= comment.user.username %> </strong>
+        <% end %>
+        <strong>said...</strong><br />
         <%= comment.comment_entry %>
         <% if comment.user == current_user %>
           <br> <br> <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>

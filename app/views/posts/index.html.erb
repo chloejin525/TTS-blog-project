@@ -24,15 +24,17 @@
     <%= post.title %>
   </div>
   <div class="col-md-2">
-    <%= image_tag post.user.avatar.url, id: "post_pic" %>
-    <%= link_to post.user.username, user_posts_path(name: post.user.username) %>
+    <%= link_to user_posts_path(name: post.user.username) do %>
+      <%= image_tag post.user.avatar.url, id: "post_pic" %>
+      <strong><%= post.user.username %> </strong>
+    <% end %>
   </div>
   <div class="col-md-4">
     <%= post.blog_entry %>
   </div>
   <div class="col-md-2">
     <% post.tags.each do |tag|%>
-      | <%= tag.name %> | 
+      | <%= link_to tag.name, tag %> | 
     <% end %>
   </div>
   <div class="col-md-2">

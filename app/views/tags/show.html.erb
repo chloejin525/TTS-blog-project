@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h1>All Posts tagged as <%= @tag.name %></h1>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<% @tag.posts.each do |post| %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="well">
+        <h3><%= post.title %></h3>
+        <p><em>posted on <%= post.created_at %></em></p>
+        <p>
+          <%= post.blog_entry.html_safe %>
+        </p>
+        <p>
+          <%= link_to 'Show', post, class: "btn btn-info" %> 
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%#= link_to 'Edit', edit_tag_path(@tag) %> 
+<%= link_to 'Back', posts_path %>
