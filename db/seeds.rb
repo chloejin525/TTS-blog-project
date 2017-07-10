@@ -9,6 +9,7 @@
 # seed the user with test.jpg 
 u1 = User.create(username: 'a', password: '123456', email:'xxx@xxx.com', avatar: File.open(File.join(Rails.root, 'test.jpg')))
 u2 = User.create(username: 'b', password: '123456', email:'yyy@yyy.com', avatar: File.open(File.join(Rails.root, 'test.jpg')))
+u2 = User.create(username: 'Ling', password: '123456', email:'chloejin525@gmail.com', avatar: File.open(File.join(Rails.root, '49.jpg')))
 
 p1 = Post.create(author: u1.id, user_id: u1.id, title: 'Lorem ipsum', blog_entry: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie, leo vel varius dictum, sem arcu eleifend libero, eu efficitur metus leo vel neque. Mauris ut massa convallis, gravida turpis nec, faucibus tellus.')
 p2 = Post.create(author: u1.id, user_id: u1.id, title: 'Lorem ipsum', blog_entry: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie, leo vel varius dictum, sem arcu eleifend libero, eu efficitur metus leo vel neque. Mauris ut massa convallis, gravida turpis nec, faucibus tellus.')
@@ -19,3 +20,14 @@ p5 = Post.create(author: u2.id, user_id: u2.id, title: 'Lorem ipsum', blog_entry
 c1 = Comment.create(author: u1.id, user_id: u1.id, post_id: p1.id, comment_entry: 'Donec et sollicitudin nunc. In arcu nisl, mattis sit amet tincidunt eget, viverra id diam. ')
 c2 = Comment.create(author: u1.id, user_id: u1.id, post_id: p1.id, comment_entry: 'Donec et sollicitudin nunc. In arcu nisl, mattis sit amet tincidunt eget, viverra id diam. ')
 c3 = Comment.create(author: u2.id, user_id: u2.id, post_id: p2.id, comment_entry: 'Donec et sollicitudin nunc. In arcu nisl, mattis sit amet tincidunt eget, viverra id diam. ')
+
+t1 = Tag.create(name: "nature")
+t2 = Tag.create(name: "science")
+t3 = Tag.create(name: "tech")
+
+p1.tags << [t1, t2]
+p2.tags << [t2]
+p3.tags << [t1, t2, t3]
+
+
+

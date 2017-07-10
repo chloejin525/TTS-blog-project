@@ -7,8 +7,11 @@
   <div class="col-md-2">
     <p>Author</p>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <p>Blog Entry</p>
+  </div>
+  <div class="col-md-2">
+    <p>Tags</p>
   </div>
   <div class="col-md-2">
     <p>Action</p>
@@ -24,8 +27,13 @@
     <%= image_tag post.user.avatar.url, id: "post_pic" %>
     <%= link_to post.user.username, user_posts_path(name: post.user.username) %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <%= post.blog_entry %>
+  </div>
+  <div class="col-md-2">
+    <% post.tags.each do |tag|%>
+      | <%= tag.name %> | 
+    <% end %>
   </div>
   <div class="col-md-2">
     <ul id="action">
