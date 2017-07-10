@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u1 = User.create(username: 'a', password: '123456', email:'xxx@xxx.com', avatar: '')
-u2 = User.create(username: 'b', password: '123456', email:'yyy@yyy.com', avatar: '')
+# seed the user with test.jpg 
+u1 = User.create(username: 'a', password: '123456', email:'xxx@xxx.com', avatar: File.open(File.join(Rails.root, 'test.jpg')))
+u2 = User.create(username: 'b', password: '123456', email:'yyy@yyy.com', avatar: File.open(File.join(Rails.root, 'test.jpg')))
 
 p1 = Post.create(author: u1.id, user_id: u1.id, title: 'Lorem ipsum', blog_entry: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie, leo vel varius dictum, sem arcu eleifend libero, eu efficitur metus leo vel neque. Mauris ut massa convallis, gravida turpis nec, faucibus tellus.')
 p2 = Post.create(author: u1.id, user_id: u1.id, title: 'Lorem ipsum', blog_entry: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie, leo vel varius dictum, sem arcu eleifend libero, eu efficitur metus leo vel neque. Mauris ut massa convallis, gravida turpis nec, faucibus tellus.')

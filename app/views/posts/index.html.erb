@@ -22,7 +22,7 @@
   </div>
   <div class="col-md-2">
     <%= image_tag post.user.avatar.url, id: "post_pic" %>
-    <%= post.user.username %>
+    <%= link_to post.user.username, user_posts_path(name: post.user.username) %>
   </div>
   <div class="col-md-6">
     <%= post.blog_entry %>
@@ -30,10 +30,13 @@
   <div class="col-md-2">
     <ul id="action">
     <li><%= link_to 'Read', post, class: "btn btn-default" %></li>
+    <% if current_user.id == post.user_id %>
     <li><%= link_to 'Edit', edit_post_path(post), class: "btn btn-default" %></li>
     <li><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></li>
+    <% end %>
     </ul>
   </div>   
   </div> 
 <% end %>
+<%= paginate @posts %>
 </div>

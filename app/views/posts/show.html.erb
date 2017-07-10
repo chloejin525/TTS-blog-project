@@ -10,7 +10,7 @@
     <p>
       <strong>Author:</strong>
       <%= image_tag @post.user.avatar.url, id: "post_pic" %>
-      <%= @post.user.username %>
+      <%= link_to @post.user.username, user_posts_path(name: @post.user.username) %>
     </p>
     <p>
       <strong>Last updated:</strong>
@@ -19,7 +19,7 @@
     <br>
     <div class ="blog">
       <p>
-        <%= @post.blog_entry %>
+        <%= @post.blog_entry.html_safe %>
       </p>
 
       <%= link_to 'Edit', edit_post_path(@post) %>
@@ -38,7 +38,7 @@
         At <%= comment.updated_at %>: 
         <br> 
         <%= image_tag comment.user.avatar.url, id: "post_pic" %>
-        <%= comment.user.username %> said...<br />
+        <strong><%= link_to comment.user.username, user_posts_path(name: comment.user.username) %> said...</strong><br />
         <%= comment.comment_entry %><br /><br />
         <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
       </p>

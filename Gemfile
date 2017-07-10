@@ -5,10 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Use Carrierwave for upload pictures
 gem 'carrierwave', '~> 1.0'
+# Bootstrap
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+# Use devise for authentication
 gem 'devise'
+
+# Use Kaminari for pagination
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
