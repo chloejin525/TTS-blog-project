@@ -21,6 +21,7 @@
     <%= post.title %>
   </div>
   <div class="col-md-2">
+    <%= image_tag post.user.avatar.url, id: "post_pic" %>
     <%= post.user.username %>
   </div>
   <div class="col-md-6">

@@ -11,8 +11,10 @@
     </div>
   <% end %>
 
+  
   <div class="field">
-    <%= form.text_area :comment_entry, id: :comment_comment_entry,  placeholder: "Tell Me Something..." %>
+    <%= image_tag current_user.avatar.url, id: "comment_pic" %>
+    <%= form.text_area :comment_entry, id: :comment_comment_entry,  placeholder: "Tell Me Something...", id: "comment" %>
   </div>
 
   <div class="field">

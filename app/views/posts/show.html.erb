@@ -9,6 +9,7 @@
   <div class="panel-body">
     <p>
       <strong>Author:</strong>
+      <%= image_tag @post.user.avatar.url, id: "post_pic" %>
       <%= @post.user.username %>
     </p>
     <p>
@@ -36,6 +37,7 @@
       <p id="each-comment">
         At <%= comment.updated_at %>: 
         <br> 
+        <%= image_tag comment.user.avatar.url, id: "post_pic" %>
         <%= comment.user.username %> said...<br />
         <%= comment.comment_entry %><br /><br />
         <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>

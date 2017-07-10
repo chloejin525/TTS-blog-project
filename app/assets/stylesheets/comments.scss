@@ -1,3 +1,14 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#comment_pic {
+	float: left;
+	margin-right: 5px;
+	height: 30px;
+	widht: 30px;
+}
+
+#comment {
+	height: 80px;
+}
