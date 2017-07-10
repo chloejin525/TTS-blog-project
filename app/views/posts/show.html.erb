@@ -36,7 +36,7 @@
       <p id="each-comment">
         At <%= comment.updated_at %>: 
         <br> 
-        <%= comment.user.email %> said...<br />
+        <%= comment.user.username %> said...<br />
         <%= comment.comment_entry %><br /><br />
         <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
       </p>
@@ -48,7 +48,7 @@
 </div>
 
 <div id="comments">
-    <h4>Leave a comment</h4>
+    <h4>Leave a comment: </h4>
     <%= render 'comments/form', comment: @comment %>
 </div>
 
