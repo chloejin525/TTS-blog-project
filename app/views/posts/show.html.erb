@@ -22,7 +22,9 @@
         <%= @post.blog_entry.html_safe %>
       </p>
 
+      <% if @post.user == current_user %>
       <%= link_to 'Edit', edit_post_path(@post) %>
+      <% end %>
 
       <p id="notice"><%= notice %></p>
 
@@ -39,8 +41,10 @@
         <br> 
         <%= image_tag comment.user.avatar.url, id: "post_pic" %>
         <strong><%= link_to comment.user.username, user_posts_path(name: comment.user.username) %> said...</strong><br />
-        <%= comment.comment_entry %><br /><br />
-        <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= comment.comment_entry %>
+        <% if comment.user == current_user %>
+          <br> <br> <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </p>
     <% end %>
 </div>
