@@ -12,6 +12,8 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 # Use devise for authentication
 gem 'devise'
+gem 'omniauth-facebook'
+gem 'figaro'
 
 # Use Kaminari for pagination
 gem 'kaminari'

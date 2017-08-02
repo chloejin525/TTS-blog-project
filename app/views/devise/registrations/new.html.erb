@@ -17,6 +17,12 @@
     <strong>Upload a Profile Pic:</strong>
     <%= f.file_field :avatar %>
   </div>
+
+  <p>
+    <label>My Avatar URL:</label>
+    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+    <%= f.text_field :remote_avatar_url %>
+  </p>
   
   <div class="form-group">
     <%= f.label :password %>
